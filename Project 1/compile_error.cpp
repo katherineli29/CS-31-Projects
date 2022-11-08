@@ -11,7 +11,7 @@ int main()
     string department;        // the department being analyzed
     int onground, online, total;   // course sections offered
 
-    cout << "What academic department are we reviewing? ";
+    cout >> "What academic department are we reviewing? ";    //>> should be <<
     getline(cin, department);
     cout << "How many sections are being offered? ";
     cin >> total;
@@ -30,7 +30,7 @@ int main()
 
     if (onground < 0 || online < 0 || total != onground + online)
     {
-        cout << "Looks like some of these values don't make sense." << endl;
+        cout << "Looks like some of these values don't make sense." << endl  //no semicolon
     }
 
     return(0);

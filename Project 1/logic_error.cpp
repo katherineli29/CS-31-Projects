@@ -20,7 +20,7 @@ int main()
     cout << "How many of these sections are happening on-line? ";
     cin >> online;
 
-    double percentage = 100.0 * onground / (onground + online);
+    double percentage = onground / (onground + online) * 100.0;
 
     cout.setf(ios::fixed);  // see pp. 30-31 in Savitch book
     cout.precision(1);
