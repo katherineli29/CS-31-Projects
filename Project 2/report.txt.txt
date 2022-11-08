@@ -1,0 +1,34 @@
+Katherine Li
+305764039
+
+a. My biggest obstacle was honestly figuring out how the math worked for each part. It took 
+me a while to realize that the discounts were multiplied by the number of lines bought, as 
+well as that the discount for extra phone lines applied to every line as long as more than 
+one was purchased, instead of only being applied to all lines besides the first one. As a 
+result, after I finished my code, my biggest issue was simply figuring out why my math 
+wasn't working out the same as the online calculator and codeboard examples.
+
+b. 
+Incorrect cell plan ("hola") 
+Determines that program correctly rejects and responds to invalid cell plan names
+
+Incorrect autopay or paperless billing responses, such as numbers or random words 
+("Prepaid", 10) ("Unlimited Elite", "Yes", "yoink") 
+Determines that program correctly rejects and responds to answers other than "Yes" and "No"
+
+Negative number, number greater than 3, 0, or double for lines on plan ("Prepaid", "No", 
+"Yes", -4 || 5 || 0.1 || 0)
+Determines that program does not accept answers for lines on plan other than 1, 2, or 3
+
+Negative number, number greater than 30, or double for gigabytes ("Prepaid", "No", "No", 2,
+-3 || 31 || 0.1)
+Determines that program does not accept negative, decimal, or invalid (>30) answers
+Note: program simply spits out all cout lines with calculations performed by declared 
+variables then ends when double is entered
+
+2 or 3 lines when autopay and billing discounts are applies ("Unlimited Starter", "Yes", 
+"Yes", 2, 0)
+Checks that the discounts are properly multiplied for extra lines
+
+More than 4 gigabytes on prepaid plan ("Prepaid", "No", "No", 1, 30)
+Checks that data usage is properly charged
