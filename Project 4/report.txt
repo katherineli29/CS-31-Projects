@@ -1,0 +1,33 @@
+Katherine Li
+305764039
+
+a. 
+The first obstacle I struggled with was just determining how to test all the arrays. After 
+the first couple of for loops, the format became much easier to organize, and coding the 
+functions ultimately went very smoothly. Most obstacles were easily overcome by seeing 
+what errors the compiler pointed out and regularly testing functions as I was completing 
+them. I struggled a bit with figuring out how to code majorityElements, but after realizing 
+that a majority element would be in both halves of an array, I realized that there were some 
+easy ways to check through the array. Then, for rotateLeft, I struggled a bit with trying to 
+figure out how to test if an array remained unchanged. It was figuring out that, for that to 
+happen, amount%n would have to equal 0, that allowed me to properly code it.
+
+b.
+locateMinimum(folks, 8); //properly locates minimum
+locateMinimum(folks, -5); //returns -1 bc of negative n
+countCommonElements( folks, 8, data, 5 ); //returns 1 bc arrays share 1 element
+countCommonElements(folks, -1, data, 5); //returns -1 bc of negative n1
+countVowels(folks, 8); //check that it counts the right number of vowels
+countVowels(folks, 0); //returns -1 bc n = 0
+hasThreeOfX(data, 5, "mama"); //check that it returns true
+hasThreeOfX(data, -1, "mama"); //returns false bc n = -1
+hasThreeOfX(data, 4, "mama"); //check that it returns false
+majorityElement(data, 5); //check that it returns "mama"
+majorityElement(folks, 5); //check that it returns ""
+shiftRight(data, -1, 3, "rhee"); //returns false bc of negative n
+shiftRight(data, 2, -5, "yeet"); //returns false bc of negative amount
+shiftRight(folks, 5, 10, "oof"); //check that it changes array to 5 "oof"s and returns true
+rotateLeft(folks, 5, 15); //check that it returns false (array unchanged)
+rotateLeft(data, 5, 1); //check that it rotates all the elements left by 1
+replaceAll(folks, 8, 'e', 'Z'); //check that it changes all e's to Z's and returns 5
+replaceAll(folks, 8, 'O', 'a'); //check that it returns 0 and makes no changes
