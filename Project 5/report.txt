@@ -1,0 +1,50 @@
+Katherine Li
+305764039
+
+a. This project was a lot about working with new concepts, from different files with headers 
+to enumerators and classes. As a result, a lot of the obstacles mainly came from figuring out 
+how to work with all these new ideas. It took a while for me to remember and properly format 
+guards for the headers. I also needed to get used to including all the proper #include lines 
+and double checking that I had declared and defined all the functions properly. It got 
+confusing at times to remember how all the variables of the different classes interacted with 
+each other and their functions, too. Overall, while the project wasn't too difficult, the 
+main obstacle was really figuring out how to organize and properly link all the different 
+files.
+
+b. 
+GymMember useless("I", 0, OTHER); //check that constructor won't run if account number is int
+GymMember uselessness(0, "5", OTHER); //check that constructor won't run if name is int
+GymMember failure(0, "5", "rhee"); //check that constructor won't run if kind isn't Kind
+Gym do(0, "urmom", OTHER); //check that constructor won't run if name is int
+Gym be("hola", 0, OTHER); //check that constructor won't run if location is int
+Gym hungry("24Fit", "home", "lol"); //check that constructor won't run if kind isn't Kind
+
+//declarations
+GymMember otherMember("I", "5", OTHER);
+GymMember regularMember("Love", "32", REGULAR);
+GymMember premierMember("Coding", "700", PREMIER);
+Gym otherGym("BFit", "UCLA", OTHER);
+Gym regularGym("BFitFit", "UCLA", REGULAR);
+Gym premierGym("BFitFitFit", "UCLA", PREMIER);
+
+assert(regularMember.workoutsThisMonth() == 1); //starts at 0 workouts
+regularMember.newWorkout();
+assert(regularMember.workoutsThisMonth() == 1); //newWorkout() increments by 1
+regularMember.startNewMonth();
+assert(regularMember.workoutsThisMonth() == 1); //startNewMonth() resets to 0
+
+assert(otherGym.canWorkoutHere(otherMember)); //OTHER member can workout at OTHER gym
+assert(otherGym.canWorkoutHere(regularMember)); //REGULAR member can't workout at OTHER gym
+assert(regularGym.canWorkoutHere(otherMember)); //OTHER member can't workout at REGULAR gym
+assert(regularGym.canWorkoutHere(premierMember)); //PREMIER member can workout at REGULAR
+gym
+assert(premierGym.canWorkoutHere(regularMember)); //REGULAR member can't workout at PREMIER
+gym
+
+regularGym.setFeatures(true, true, true, true);
+assert(regularGym.checkin(regularMember, true, true, true, true) == true); //member checkin
+assert(regularMember.workoutsThisMonth() == 1); //checkin incr workout by 1
+
+regularGym.setFeatures(false, true, true, true);
+assert(regularGym.checkin(regularMember, true, true, true, true) == false); //member won't
+go into gym
