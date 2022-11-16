@@ -1,0 +1,70 @@
+Katherine Li
+305764039
+
+a. The biggest difficulty of this project for me was just keeping all the different classes 
+and functions straight. I often had to double check what different functions did and what 
+methods and variables I had available to me in each class. There were times when I 
+accidentally tried to use a function that I didn't have access to or used the wrong variable 
+name. Once I got everything straightened out, though, it became much easier. Another main 
+difficulty was just figuring out what I was being asked to do. For functions such as 
+endTurn(), I was confused on what I was even supposed to accomplish, not the coding itself. 
+In those cases, asking others for help and clarification was the most useful. Overall, the 
+main difficulties were really just understanding the assignment and skeleton, but they 
+weren't too bad as I continued coding and figuring out what everything meant.
+
+b. 
+//initializations
+Player player;
+Board board;
+Bunco game;
+Die die;
+
+player.setRound( 5 ); //setRound() runs without errors
+assert( player.getScore() == 0 ); //score of 0 bc no rolls
+
+player.setRound( 2 );
+player.roll( 3 );
+player.roll( 2 );
+player.roll( 1 );
+assert( player.getScore() == 1 ); //should only have score of 1 bc rolled 2 once
+
+player.setRound( 5 );
+player.roll( 1 );
+player.roll( 5 );
+player.roll( 3 );
+player.roll( 5 );
+player.roll( 4 );
+assert( player.getScore() == 2 ); //should have score of 2 bc rolled 5 twice
+
+board.setCurrentRound( 6 );
+board.markHumanAsWinner();
+assert( board.countUpComputerRoundWins() == 0 ); //no computer wins yet
+assert( board.countUpHumanRoundWins() == 1 ); //1 human win bc they were marked as winning r6
+
+board.setCurrentRound( 1 );
+board.markHumanAsWinner();
+board.setCurrentRound( 5 );
+board.markComputerAsWinner();
+assert( board.countUpComputerRoundWins() == 1 );
+assert( board.countUpHumanRoundWins() == 1 );
+//each have 1 win (human for r1 and computer for r5)
+
+die.setValue( 2 );
+game.nextRound();
+game.humanPlay( die );
+game.computerPlay( die );
+game.endTurn();
+assert(game.determineRoundOutcome() == Bunco::ROUNDOUTCOME::NOTDECIDED );
+//check that ROUNDOUTCOME is NOTDECIDED bc they are still playing
+assert(game.determineGameOutcome() == Bunco::GAMEOUTCOME::GAMENOTOVER );
+//check that GAMEOUTCOME is GAMENOTOVER bc they are still playing
+
+board.setRound( 1 );
+die.setValue( 1 );
+game.humanPlay( );
+game.computerPlay( die );
+game.endTurn()
+assert(game.getBoard().countUpHumanRoundWins() == 0 );
+//human hasn't won
+assert(game.getBoard().countUpComputerRoundWins() == 1 );
+//computer won once by rolling 1 during r1
